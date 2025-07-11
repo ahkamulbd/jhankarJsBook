@@ -393,9 +393,89 @@ const isGuestGift = false;
 
 if (isPartyGuestIs100){
     if (isGuestGift){
-        console.log('Lets party all night');
+        // console.log('Lets party all night');
     }
     else {
-        console.log('I will party with myself');
+        // console.log('I will party with myself');
     }
 }
+
+/** =============================================================
+ * ==============================================================
+ */
+
+const boyAge = 10;
+
+// boyAge >= 18 ? console.log('Eligible to vote') : console.log('Not Eligible to vote');
+
+let foodPrice = 500;
+let isLeader = false;
+
+// if (!isLeader){
+//     foodPrice = 100;
+//     // console.log(foodPrice);
+// }
+// else{
+//     foodPrice = foodPrice + 100;
+//     // console.log(foodPrice);
+// }
+
+// foodPrice = !isLeader ? 100 : foodPrice + 100;
+// foodPrice = isLeader === true ? 100 : foodPrice + 100;
+// foodPrice = !isLeader ? 100 : foodPrice + 100;
+// console.log(foodPrice);
+
+/** Problem 1 from Page # 90 */
+
+let cashback = 500;
+
+cashback = (cashback > 3000) ? `Cashback = 500` : `Cashback = 0`;
+
+// console.log(cashback);
+
+/** Problem 2 from Page # 90 */
+
+let yourAge = 22;
+
+yourAge = (yourAge > 15) ? `TeenAged` : `Child`;
+
+// console.log(yourAge);
+
+/** Problem 3 from Page # 90 */
+
+let isLoggedIn = true;
+
+// isLoggedIn = isLoggedIn ? `Welcome back` : `Please login`;
+isLoggedIn = !isLoggedIn ? `Welcome back` : `Please login`;
+
+// console.log(isLoggedIn);
+
+/** Problem 4 from Page # 90 */
+
+let isCarTankFull = true;
+
+// isCarTankFull = isCarTankFull ? `Ready for long drive` : `Fill the tank`;
+isCarTankFull = !isCarTankFull ? `Ready for long drive` : `Fill the tank`;
+
+// console.log(isCarTankFull);
+
+/** Problem 5 from Page # 90 */
+
+let isPassed = true;
+
+// isPassed = isPassed ? `Party time` : `Next Semester e serious study korbo`;
+isPassed = !isPassed ? `Party time` : `Next Semester e serious study korbo`;
+
+// console.log(isPassed);
+
+/** Problem 6 from Page # 90 */
+
+let isSunny = false;
+
+// isSunny = !isSunny ? console.log(`Stay home`) : console.log(`Go out`);
+
+/** Problem 7 from Page # 90 */
+
+let isExpensive = false;
+
+isExpensive = !isExpensive ? console.log(`I will buy this item`) : console.log(`Not buy this item`);
