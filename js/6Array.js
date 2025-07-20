@@ -135,6 +135,6 @@ else{
 
 const games = ['Football', 'Cricketd', 'Volleyball'];
 
-console.log(games.indexOf('Badminton'));
+// console.log(games.indexOf('Badminton'));
 
 
