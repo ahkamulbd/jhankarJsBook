@@ -152,5 +152,142 @@ while (number20 <= 40){
 }
 // console.log(`Output = ${number20Sum}`);
 
+/** ============================================================================
+ *  ======================== For Loop ==========================================
+ *  ============================================================================
+ */
+
+/** Problem 1 from Page # 114 */
+
+for (let i = 150; i <= 170; i++){
+    // console.log(i);
+}
+
+/** Problem 2 from Page # 114 */
+
+let rollSum = 0;
+
+for (let i = 31; i <= 58; i++){
+    rollSum = rollSum + i;
+    // console.log(i);
+}
+// console.log(`Sum of 31 to 58 = ${rollSum}`);
+
+/** Problem 3 from Page # 114 */
+
+let number25Sum = 0;
+
+for (let i = 25; i <= 75; i++){
+    number25Sum = number25Sum + i;
+}
+// console.log(`Sum of 25 to 75 = ${number25Sum}`);
+
+/** =================================================================
+ *  ====================== Odd & Even with Loop =====================
+ *  =================================================================
+ */
+
+/** Problem 1 from Page # 119 */
+
+for (let i = 20; i <= 50; i++){
+    if (i % 7 === 0){
+        // console.log(i);
+    }
+}
+
+/** Problem 2 from Page # 119 */
+
+for (let i = 40; i <= 80; i++){
+    if (i % 7 === 0 && i % 5 === 0){
+        // console.log(i);
+    }
+}
+
+/** Problem 3 from Page # 119 */
+
+let sum13 = 0;
+
+for (let i = 1; i <= 40; i++){
+    if (i % 13 === 0){
+        sum13 = sum13 + i;
+    }
+}
+// console.log(sum13);
+
+/** Problem 4 from Page # 119 */
+
+for (let i = 1; i <= 50; i = i + 4){
+    // console.log(i);
+}
+
+/** Problem 5 from Page # 119 */
+
+for (let i = 0; i <= 100; i ++){
+    if ((i % 9 === 0 && i % 6 === 0) && i !== 0){
+        // console.log(i);
+    }
+}
 
 
+/** Problem 6 from Page # 119 */
+
+let sum3And4 = 0;
+
+for (let i = 1; i <= 50; i ++){
+    if (i % 3 === 0 && i % 4 === 0){
+        sum3And4 = sum3And4 + i;
+        // console.log(i);
+    }
+}
+// console.log(sum3And4);
+
+/** =========================================================================
+ *  ================= break & continue in Loop ==============================
+ *  =========================================================================
+ */
+
+/** Problem 1 from Page # 122 */
+
+for (let i = 1; i <= 30; i++){
+    // console.log(i);
+    if (i === 15){
+        break;
+    }
+}
+
+/** Problem 2 from Page # 122 */
+
+for (let i = 1; i <= 40; i++){
+    if (i % 7 === 0){
+        continue;
+    }
+    // console.log(i);
+}
+
+/** Problem 3 from Page # 122 */
+
+for (let i = 1; i <= 15; i++){
+    if (i === 9){
+        continue;
+    }
+    // console.log(i);
+}
+
+/** Problem 5 from Page # 122 */
+
+for (let i = 1; i <= 25; i++){
+    if (i % 3 === 0){
+        continue;
+    }
+    // console.log(i);
+}
+
+
+/** Problem 6 from Page # 122 */
+
+for (let i = 91; i <= 120; i++){
+    console.log(i);
+    if (i % 10 === 0){
+        break;
+    }
+}
