@@ -245,3 +245,70 @@ for (const key in building){
     // console.log(key);
     // console.log(value);
 }
+
+/** ==============================================================================
+ *  =================== delect, freeze & seal in Object ==========================
+ *  ==============================================================================
+ */
+
+/** Problem 1 from Page # 139 */
+
+const headPhone = {
+    brand: "Sony",
+    price: 3000,
+    color: "red"
+}
+Object.freeze(headPhone);
+headPhone.color = "blue";
+
+// console.log(headPhone);
+
+/** Problem 3 from Page # 140 */
+
+const book = {
+    title: "Harry Potter",
+    author: "JK Rowling",
+    pages: 500
+}
+Object.seal(book);
+book.author = 'Abul Kalam';
+book.city = "New York";
+
+// console.log(book);
+
+/** Problem 4 from Page # 140 */
+
+const gadget = {
+    name: "iPHone",
+    price: 120000,
+    color: "black"
+}
+delete gadget.price;
+
+// console.log(gadget);
+
+/** Problem 5 from Page # 140 */
+
+const animal = {
+    name: "Tiger",
+    location: "Sundarban"
+}
+Object.freeze(animal);
+animal.location = "Bandarban";
+
+// console.log(animal);
+
+/** Problem 6 from Page # 140 */
+
+const food = {
+    name: "Pizza",
+    price: 500,
+    size: "Large"
+}
+Object.seal(food);
+
+food.brand = "Banaful";
+food.price = 700;
+food.size = "Medium";
+
+// console.log(food);
