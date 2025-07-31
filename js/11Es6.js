@@ -123,5 +123,127 @@ const salaryObject = {
     tax: 20
 }
 
-console.log (findingSalaryTax ());
-console.log (findingSalaryTax (salaryObject));
+// console.log (findingSalaryTax ());
+// console.log (findingSalaryTax (salaryObject));
+
+/** ====================================================================================
+ *  ============================ String Template +++++++++++++++++++++++++++++++++++++++
+ *  ====================================================================================
+ */
+
+/** Problem 1 from Page 191 */
+
+const number1 = 100;
+const number2 = 20;
+const difference = number1 - number2;
+
+// console.log (`The difference between ${number1} and ${number2} is ${difference}`);
+
+/** Problem 2 from Page 191 */
+
+const employee = {
+    name: "Akash",
+    age: 28,
+    salary: 40000
+}
+// console.log (`Name: ${employee.name}, Age: ${employee.age} and Salary: ${employee.salary}`);
+
+/** Problem 3 from Page 191 */
+
+const fruits = ['Apple', 'Banana', 'Mango', 'Guava', 'Orange'];
+
+// console.log (`My favourite fruit is ${fruits[2]}`);
+
+/** Problem 4 from Page 191 */
+
+const a = 50;
+const b = 10;
+
+// console.log (`The division of ${a} and ${b} is ${a / b}`);
+
+/** Problem 5 from Page 191 */
+
+const person = {
+    firstName: 'Amit',
+    lastName: 'Kumar'
+}
+// console.log (`Full Name: ${person.firstName} ${person.lastName}`);
+
+/** Problem 6 from Page 191 */
+
+const animals = ['Cat', 'Dog', 'Elephant'];
+
+// console.log (`My favorite animals are ${animals.join (', ')}`);
+
+/** Problem 7 from Page 191 */
+
+const student = {
+    name: 'Amima',
+    age: 11,
+    results: [100, 99, 93]
+}
+const length = student.results.length;
+// console.log (length);
+const sum = student.results [0] + student.results [1] + student.results [2];
+const average = sum / length;
+
+// console.log (`Name: ${student.name},
+//     Age: ${student.age} and
+//     Average Marks: ${average.toFixed(2)};              
+//     `);
+
+/** ==================================================================================
+ *  ================== Arro Function =================================================
+ *  ==================================================================================
+ */
+
+function add (a, b) {
+    return a + b;
+}
+// console.log (add (5, 7));
+
+const add1 = (a, b) => a + b;
+// console.log (add1 (5, 7));
+
+/** Problem 1 from Page # 195 */
+
+const arr = [4, 7, 2, 11, 23, 0, 21];
+const arro = (array) => array[5];
+
+// console.log(arro (arr));
+
+/** Problem 2 from Page # 195 */
+
+const threeArro = (a, b, c) => a * b * c;
+// console.log (threeArro (4, 5, 6));
+
+/** Problem 3 from Page # 196 */
+
+const anonymousArro = () => "Unknown";
+// console.log (anonymousArro ());
+
+/** Problem 4 from Page # 196 */
+
+const moneyObj = {
+    name: "Akash",
+    pocketMoney: 1200
+}
+const moneyArro = (obj) => obj.pocketMoney / 5;
+
+// console.log (moneyArro (moneyObj));
+
+/** Problem 5 from Page # 196 */
+
+const jsArray = [4, 7, 2, 11, 23, 0, 21];
+// const jsArrayLength = jsArray.length;
+
+const jsArrow = (array) => array [0] + array [array.length - 1];
+
+// console.log (jsArrow (jsArray));
+
+/** Problem 6 from Page # 196 */
+
+const arroSum = (a = 10, b = 5) => a + b;
+
+console.log (arroSum ());
+console.log (arroSum (20, 30));
