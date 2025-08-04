@@ -245,5 +245,5 @@ const jsArrow = (array) => array [0] + array [array.length - 1];
 
 const arroSum = (a = 10, b = 5) => a + b;
 
-console.log (arroSum ());
-console.log (arroSum (20, 30));
+// console.log (arroSum ());
+// console.log (arroSum (20, 30));
