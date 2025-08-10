@@ -132,4 +132,170 @@ const array8Element = array8.forEach (element => sum += element);
 const animal = ['cow', 'goat', 'sheep', 'horse'];
 
 // const eachAnimal = animal.forEach (each => console.log (each));
-const eachAnimal = animal.forEach (each => console.log (each [0]));
+// const eachAnimal = animal.forEach (each => console.log (each [0]));
+
+/** ========================================================================
+ *  ================== every, some, flat ===================================
+ *  ========================================================================
+ */
+
+const scores = [30, 45, 55, 80, 90];
+const hasPassed = scores.some (score => score >= 50);
+// console.log (hasPassed);
+
+const hasFailed = scores.every (score => score >= 50);
+// console.log (hasFailed);
+
+const nestedArray = [1, 2, [3, 4, [5, 6]]];
+// const flatArray = nestedArray.flat(1);
+// const flatArray = nestedArray.flat(2);
+// const flatArray = nestedArray.flat();
+const flatArray = nestedArray.flat(3);
+// console.log (flatArray);
+
+
+/** Problem 1 from Page # 1 */
+
+const someArray = [39, 76, 102, 99, 107];
+const isOver100 = someArray.some (element => element >= 100);
+// console.log (isOver100);
+
+/** Problem 2 from Page # 1 */
+
+const everyArray = [10, 21, 35, 55, 105, 65];
+const isDivisibleBy5 = everyArray.every (element => element % 5 === 0);
+// console.log(isDivisibleBy5);
+
+/** Problem 3 from Page # 1 */
+
+const words = ['Bye', 'hello', 'good morning', 'good night'];
+const checkHello = words.some (element => element = 'hell0');
+// console.log (checkHello);
+
+/** Problem 4 from Page # 1 */
+
+const ages = [11, 21, 18, 19, 15, 17];
+const allOver18 = ages.every (age => age >= 18);
+// console.log (allOver18);
+
+/** ==================================================================================
+ *  ================= reduce, object array ===========================================
+ * ===================================================================================
+ */
+
+/** Problem 1 from Page 228 */
+
+const reduceArray = [5, 10, 15, 20, 25];
+const reduceSum = reduceArray.reduce ((accumulator, current) => accumulator + current, 0);
+// console.log (reduceSum);
+
+/** Problem 2 from Page 228 */
+
+const shopGoods = [
+    {name: 'shampoo', price: 100},
+    {name: 'soap', price: 50},
+    {name: 'toothpaste', price: 75},
+]
+const totalPrice = shopGoods.reduce ((accumulator, current) => accumulator + current.price, 0);
+// console.log (totalPrice);
+
+/** Problem 3 from Page 229 */
+
+const productList = [
+    {name: 'Pen', qty: 5, price: 5},
+    {name: 'Book', qty: 7, price: 50},
+    {name: 'Bag', qty: 2, price: 500},
+];
+
+const totalRevenue = productList.reduce ((accumulator, current) => {
+    let goodsPrice = current.qty * current.price;
+    let revenue = accumulator + goodsPrice;
+
+    return revenue;
+}, 0);
+
+// console.log (totalRevenue);
+
+/** Problem 4 from Page 229 */
+
+const multiplyArray = [1, 2, 3, 4, 5];
+
+const multiply = multiplyArray.reduce ((accumulator, current) => accumulator * current, 1);
+// console.log (multiply);
+
+/** Problem 5 from Page 229 */
+
+const values = [10, 200, 30, 40, 50];
+// let highestValue = values [0];
+// for (const value of values) {
+//     if (value > highestValue){
+//         highestValue = value;
+//     }
+// }
+// console.log (highestValue);
+
+const highestValue = values.reduce ((accumulator, current) => {
+    // console.log (accumulator, current);
+    if (current > accumulator) {
+        return current;
+    }
+    else {
+        return accumulator;
+    }
+});
+// console.log (highestValue);
+
+
+/** Problem 6 from Page 229 */
+
+const madeArray = [100, 200, 300, 400];
+
+const elementSum = madeArray.reduce ((accumulator, currentValue) => accumulator + currentValue, 50);
+// console.log (elementSum);
+
+/** ================================================================================
+ *  =========================== sort method ========================================
+ *  ================================================================================
+ */
+
+/** Problem 1 from Page 232 */
+
+const array232 = [50, 12, 25, 8, 15];
+// array232.sort ((a, b) => a -b);
+// console.log (array232);
+
+const result232 = array232.sort ((a, b) => a -b);
+// console.log (result232);
+
+/** Problem 2 from Page 233 */
+
+const arrayDescending = [13, 2, 45, 9, 6];
+
+const resultDescending = arrayDescending.sort ((a, b) => b - a);
+// console.log (resultDescending);
+
+/** Problem 3 from Page 233 */
+
+const ageObjectArray = [
+    {name: "Belal", age: 25},
+    {name: "Helal", age: 18},
+    {name: "Tariq", age: 35},
+     {name: "Ali", age: 29},
+    {name: "Sara", age: 22}
+]
+
+// const ageSort = ageObjectArray.sort ((a, b) => a.age - b.age);
+// console.log (ageSort);
+
+const nameSort = ageObjectArray.sort ((a, b) => 
+    a.name.toLowerCase().localeCompare(b.name.toLowerCase())
+);
+// const nameSort = ageObjectArray.sort ();
+// console.log (nameSort);
+
+/** Problem 4 from Page 233 */
+
+const nameArray233 = ['nabil', 'zubayer', 'sarwar', 'akash', 'delwar'];
+
+const sortingName = nameArray233.sort ((a, b) => a.localeCompare (b));
+console.log (sortingName);
