@@ -298,4 +298,60 @@ const nameSort = ageObjectArray.sort ((a, b) =>
 const nameArray233 = ['nabil', 'zubayer', 'sarwar', 'akash', 'delwar'];
 
 const sortingName = nameArray233.sort ((a, b) => a.localeCompare (b));
-console.log (sortingName);
+// console.log (sortingName);
+
+/** ======================== reverse Method ==================== */
+
+/** Problem 1 from Page # 233 */
+
+const namesArray233 = ['Lara', 'Tariq', 'Amir', 'Lina'];
+const reverseName = namesArray233.reverse ();
+// console.log (reverseName);
+
+/** Problem 2 from Page # 233 */
+
+const numbersArr = [1, 4, 9, 7];
+const elementsReverse = numbersArr.reverse ();
+// console.log (numbersArr);
+
+/** Problem 3 from Page # 233 */
+
+const usersObjArray = [
+    {name: 'Ali', age: 30},
+    {name: 'Sara', age: 25},
+    {name: 'Tariq', age: 35},
+]
+const reverseUsers = usersObjArray.reverse ();
+// console.log (reverseUsers);
+
+/** ======================== slice & splice Method */
+
+/** Problem 1 from Page # 236 */
+
+const fruitsArr = ['Apple', 'Banana', 'Cherry', 'Date'];
+const sliceFruits = fruitsArr.slice (1, 3);
+// console.log (sliceFruits);
+// console.log (fruitsArr);
+
+const spliceFruits = fruitsArr.splice (1, 2);
+// console.log (spliceFruits);
+// console.log (fruitsArr);
+
+/** Problem 2 from Page # 236 */
+
+const cars = ['Tesla', 'BMW', 'Toyota', 'Ford'];
+const carsSlice = cars.slice (0, 2);
+// console.log (carsSlice);
+
+/** Problem 3 from Page # 236 */
+
+const movieList = ['Inception', 'Titanic', 'Joker', 'Avatar', 'Intersteller'];
+const movieSplice = movieList.splice (2, 2, 'Batman', 'Superman');
+// console.log (movieSplice);
+// console.log (movieList);
+
+/** Problem 4 from Page # 236 */
+
+const players = ['Messi', 'Ronaldo', 'Mbappe', 'Neymar'];
+const playersSplice = players.splice (2, 1, 'Rooney');
+// console.log (players);
