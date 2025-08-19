@@ -168,4 +168,4 @@ for (const letter of sentence1){
     reverse = letter + reverse;
 }
 
-console.log (reverse);
+// console.log (reverse);
