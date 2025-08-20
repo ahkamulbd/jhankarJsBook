@@ -215,9 +215,118 @@ const strinng = "";
 
 /** Problem 7 from Page # 270 */
 
-if (1 === '1') {
-    console.log ('Same');
+// if (1 === '1') {
+//     console.log ('Same');
+// }
+// else {
+//     console.log ('Different');
+// }
+
+
+/** ======================== callback function ===================== */
+
+function calculate (a, b, callback) {
+    const result = a + b;
+    callback (result);
 }
-else {
-    console.log ('Different');
+
+function printResult (value) {
+    console.log (`Result is: ${value}`);
 }
+
+// calculate (10, 20, printResult);
+
+const arrCb = [1, 2, 3, 4, 5];
+
+const double = arrCb.map (function (element) {
+    return element * 2;
+});
+
+// console.log (double);
+
+/** Problem 1 from Page # 273 */
+
+function newFunc (callback) {
+    callback ();
+}
+
+function argumentFunction () {
+    console.log ('Bangladesh is beautiful');
+}
+
+// newFunc (argumentFunction);
+
+/** Problem 2 from Page # 273 */
+
+function objFuction (obj, callback) {
+    const keys = Object.keys (obj);
+    for (const key of keys){
+        callback (key)
+    }
+    // callback (keys);
+}
+
+const byke = {
+    brand: 'Bajaj',
+    cc: '125',
+    madeIn: 'BD',
+    price: 100000
+}
+
+const newFunction = (value) => console.log (value);
+
+// objFuction (byke, newFunction);
+
+/** Problem 3 from Page # 274 */
+
+const numberProcessor = (number, callback) => {
+    const result = number / 5;
+    callback (result);
+}
+
+const resultFunc = (value) => console.log (value);
+
+// numberProcessor (100, resultFunc);
+
+/** Problem 4 from Page # 274 */
+
+const greeting = (greetingHandler) => {
+    greetingHandler ();
+}
+const morningGreeting = () => {
+    console.log ("Good Morning");
+}
+// greeting (morningGreeting);
+
+
+/** ================================== Scope ============================ */
+
+/** Problem 1 from Page # 279 */
+
+const taxRate = 15 / 100;
+
+const taxAmount = income => {
+    const payableTax = income * taxRate;
+
+    return payableTax;
+}
+// console.log (taxAmount (50000));
+
+/** Problem 2 from Page # 279 */
+
+const secretFunction = () => {
+    let insideSecret = "internal secret hiding place";
+}
+// console.log (insideSecret);
+
+/** Problem 4 from Page # 279 */
+
+const schoolDetails = () => {
+    const schoolName = 'Lama School';
+    const displaySchoolName = () => {
+        console.log (schoolName);
+    }
+    displaySchoolName ();
+}
+schoolDetails ();
+
