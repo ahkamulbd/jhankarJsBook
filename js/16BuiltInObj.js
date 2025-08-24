@@ -181,10 +181,53 @@ dateObj.setFullYear (2040);
 
 const newDate5 = new Date (2029, 1, 16);
 const dayIndex = newDate5.getDay ();
-console.log (dayIndex);
+// console.log (dayIndex);
 
 const day = new Intl.DateTimeFormat('en-US', { weekday: 'long' }).format(newDate5);
-console.log (day);
+// console.log (day);
 
 const dayBangla = new Intl.DateTimeFormat('bn-BD', { weekday: 'long' }).format(newDate5);
-console.log (dayBangla);
+// console.log (dayBangla);
+
+
+/** ========================= Regular Expression =================================== */
+
+const sentence = "I have an apple";
+const pattern = /apple/;
+// console.log (pattern.test (sentence));
+
+const sentence1 = "I have an apple and another apple";
+const newSentence1 = sentence1.replace (/apple/g, "Orange");
+// console.log (newSentence1);
+
+/** ======== Email & Mobile Validation ============= */
+
+// const email = "example@mail.com";
+const email = "examplE@mail.com";
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+// console.log (emailPattern.test (email));
+
+const mobile = "01713124572";
+const mobilePattern = /^(?:\+?88|0088)?01[15-9]\d{8}$/;
+// console.log (mobilePattern.test (mobile));
+
+
+/** Problem 1 from Page # 290 */
+
+const sentence11 = "I bought an orange and another orange";
+// const sentence11Pattern = sentence11.replace (/orange/, "grape");
+const sentence11Pattern = sentence11.replace (/orange/g, "grape");
+// console.log (sentence11Pattern);
+
+/** Problem 2 from Page # 290 */
+
+const sentence2 = "I like to have apple and banana";
+// const pattern2 = /ana/;
+const pattern2 = /anab/;
+// console.log (pattern2.test (sentence2));
+
+/** Problem 3 from Page # 290 */
+
+const sentence3 = "I am eating apple. apple is good. apple helps me a lot.";
+const pattern3 = sentence3.replace (/apple/g, "guava");
+console.log (pattern3);
