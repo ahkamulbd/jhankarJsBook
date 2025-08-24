@@ -328,5 +328,5 @@ const schoolDetails = () => {
     }
     displaySchoolName ();
 }
-schoolDetails ();
+// schoolDetails ();
 
