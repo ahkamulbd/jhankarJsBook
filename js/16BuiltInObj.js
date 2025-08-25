@@ -230,4 +230,81 @@ const pattern2 = /anab/;
 
 const sentence3 = "I am eating apple. apple is good. apple helps me a lot.";
 const pattern3 = sentence3.replace (/apple/g, "guava");
-console.log (pattern3);
+// console.log (pattern3);
+
+/** =================== Map Set =========================== */
+
+const mySet = new Set ([1, 2, 3, 4, 5]);
+// console.log (mySet);
+
+const numbers = [1, 1, 2, 3, 4, 4, 5];
+const uniqueNumbers = new Set (numbers);
+// console.log (uniqueNumbers);
+
+const uniqueArray = [...new Set (numbers)];
+// console.log (uniqueArray);
+
+const mySet1 = new Set ();
+mySet1.add (10);
+mySet1.add (20);
+mySet1.add (30);
+mySet1.add (40);
+mySet1.add (50);
+// console.log (mySet1);
+
+const myUniqueSet = new Set (mySet1);
+// console.log (myUniqueSet);
+
+const mySetArray = [...new Set (mySet1)];
+// console.log (mySetArray);
+
+// console.log (mySet1.has (30));
+mySet1.delete (20);
+// console.log (mySet1);
+
+/** ======================= Array vs Set ================== */
+
+/** 
+ * Duplicate value: Array can hold duplicate values, but Set can hold only unique value.
+ * Access Method: Array supports index based access, but Set works wity only value.
+ * Efficiency: Set is comparatively quick to check or remove data from bigger data, where as Array depends  on loop on that case. 
+ */
+
+
+/** ======================= Map Object ===================== */
+
+const myMap = new Map ();
+myMap.set ("name", "Rahul");
+myMap.set ("age", 29);
+
+// console.log (myMap);
+
+
+/** Problem 1 from Page $ 293 */
+
+const duplicateArray = [1, 2, 2, 3, 4, 4, 5];
+const uniqueArray1 = [...new Set (uniqueArray)];
+// console.log (uniqueArray1);
+
+/** Problem 2 from Page $ 293 */
+
+const newSet2 = new Set ();
+newSet2.add (10);
+newSet2.add (20);
+newSet2.add (10);
+newSet2.add (30);
+// console.log (newSet2);
+
+/** Problem 3 from Page $ 293 */
+
+const newSet3 = new Set ([10, 20, 30]);
+newSet3.delete (10);
+// console.log (newSet3);
+
+/** Problem 4 from Page $ 293 */
+
+const newArraySet = new Set ([1, 2, 3, 4, 2, 1, 5, 5]);
+console.log (newArraySet);
+
+const newArray = [...new Set (newArraySet)];
+console.log (newArray);
