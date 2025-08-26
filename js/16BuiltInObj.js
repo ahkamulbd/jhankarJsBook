@@ -304,7 +304,7 @@ newSet3.delete (10);
 /** Problem 4 from Page $ 293 */
 
 const newArraySet = new Set ([1, 2, 3, 4, 2, 1, 5, 5]);
-console.log (newArraySet);
+// console.log (newArraySet);
 
 const newArray = [...new Set (newArraySet)];
-console.log (newArray);
+// console.log (newArray);
