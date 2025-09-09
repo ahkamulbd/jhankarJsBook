@@ -287,4 +287,279 @@ const totalPriceObj = new ShoppingCart ([], 10000);
 totalPriceObj.addToCart ('Computer', 30000);
 totalPriceObj.getTotalPrice ();
 
-console.log (totalPriceObj);
+// console.log (totalPriceObj);
+
+
+/** ========================== Class Inheritance ========================== */
+
+class Gadget {
+    constructor (brand, model, price) {
+        this.brand = brand;
+        this.model = model;
+        this.price = price;
+    }
+}
+class Laptop extends Gadget {
+    constructor (brand, model, price, keyboardLight) {
+        super (brand, model, price);
+        this.keyboardLight = keyboardLight;
+    }
+}
+
+const myLaptop = new Laptop ('HP', 'Probook', 30000, true);
+// console.log (myLaptop);
+// console.log (myLaptop.brand);
+// console.log (myLaptop.model);
+// console.log (myLaptop.price);
+// console.log (myLaptop.keyboardLight);
+
+
+/** Problem 1 from Page # 366: What is the inheritance of class in JavaScript? Why is it needed? */
+
+/** 
+ * Answer:
+ * 
+        * 🔹 What is Inheritance in JavaScript?
+
+        Inheritance in JavaScript is a way for one class (child/subclass) to get properties and methods from another class (parent/superclass).
+
+        👉 It’s based on prototypes, but when we use the class syntax (introduced in ES6), inheritance becomes cleaner and easier to read.
+
+        🔹 Why is Inheritance Needed?
+
+        Code Reusability
+
+        Instead of rewriting the same code, you can reuse it in child classes.
+
+        Example: Laptop, Phone, Tablet can all inherit from Gadget.
+
+        Organization & Structure
+
+        Helps organize code into a hierarchy (general → specific).
+
+        Example: Animal → Bird → Eagle.
+
+        Extensibility
+
+        You can add new features to child classes without changing the parent class.
+
+        Maintainability
+
+        If something changes in the parent class, all child classes automatically benefit from it.
+
+        ✅ In short:
+        Inheritance in JavaScript allows one class to extend another, reuse its code, and build a logical structure. It makes code cleaner, less repetitive, and easier to maintain.
+
+ */
+
+
+/** Problem 2 from Page # 366: How is relationship between Parent and Child classes built in JavaScript ? */
+
+/**
+ * Answer:
+ * 
+        * In JavaScript, the relationship between Parent and Child classes is built through prototype chaining and the extends / super keywords. Let me explain step by step:
+
+        🔹 1. Parent & Child with extends
+
+        When you write:
+
+        class Parent {}
+        class Child extends Parent {}
+
+
+        👉 This means:
+
+        The Child class inherits from the Parent.
+
+        JavaScript sets up the prototype chain so methods from Parent are available to Child.
+
+        🔹 2. How the Relationship is Built
+
+        Under the hood:
+
+        Child.prototype.__proto__ points to Parent.prototype.
+        (So, objects created from Child can access methods from Parent.)
+
+        Child.__proto__ points to Parent.
+        (So static methods from Parent are also available in Child.)
+
+        🔹 3. Example with Code
+        class Gadget {
+        constructor(brand) {
+            this.brand = brand;
+        }
+        showBrand() {
+            return `Brand: ${this.brand}`;
+        }
+        }
+
+        class Laptop extends Gadget {
+        constructor(brand, keyboardLight) {
+            super(brand); // calls Parent constructor
+            this.keyboardLight = keyboardLight;
+        }
+        showLaptop() {
+            return `${this.showBrand()}, Keyboard Light: ${this.keyboardLight}`;
+        }
+        }
+
+        const dell = new Laptop("Dell", true);
+
+        console.log(dell.showLaptop());   // Brand: Dell, Keyboard Light: true
+        console.log(dell instanceof Laptop); // true
+        console.log(dell instanceof Gadget); // true
+
+        🔹 4. Visual Relationship (Prototype Chain)
+        dell (object)
+        ↑
+        Laptop.prototype
+        ↑
+        Gadget.prototype
+        ↑
+        Object.prototype
+
+
+        dell first looks in Laptop.prototype for methods.
+
+        If not found, it looks in Gadget.prototype.
+
+        If still not found, it looks in Object.prototype.
+
+        🔹 5. Why super is Important
+
+        In the child constructor, you must call super(...) before using this.
+
+        super calls the parent constructor and initializes the parent part of the object.
+
+        ✅ Summary:
+        The relationship between parent and child classes in JavaScript is built using extends and super. Under the hood, it’s powered by prototype chaining, which links the child class’s prototype to the parent’s prototype, allowing property and method inheritance.
+ */
+
+/** Problem 3 from Page # 366 */
+
+class Vehicle3 {
+    constructor (brand, model, price, wheelNumber) {
+        this.brand = brand;
+        this.model = model;
+        this.price = price;
+        this.wheelNumber = wheelNumber;
+    }
+}
+
+class Bus extends Vehicle3{
+    constructor (brand, model, price, wheelNumber, isPassenger){
+        super (brand, model, price, wheelNumber);
+        this.isPassenger = isPassenger;
+    }
+}
+class Truck extends Vehicle3{
+    constructor (brand, model, price, wheelNumber, isGoods){
+        super (brand, model, price, wheelNumber);
+        this.isGoods = isGoods;
+    }
+}
+class Bike extends Vehicle3{
+    constructor (brand, model, price, wheelNumber, madeIn){
+        super (brand, model, price, wheelNumber);
+        this.madeIn = madeIn;
+    }
+}
+
+const sAlamBus = new Bus ('S Alam', 'M 16', 12000000, 4, true);
+// console.log (sAlamBus);
+// console.log (sAlamBus.brand);
+// console.log (sAlamBus.model);
+// console.log (sAlamBus.price);
+// console.log (sAlamBus.wheelNumber);
+// console.log (sAlamBus.isPassenger);
+
+/** Problem 4 from Page # 366 */
+
+class Animal4 {
+    constructor (type, liveIn, isDomestic, legs) {
+        this.type = type;
+        this.liveIn = liveIn;
+        this.isDomestic = isDomestic;
+        this.legs = legs;
+    }
+    animalLiveIn () {
+        return `${this.type} lives in ${this.liveIn}`;
+    }
+}
+
+class Bird extends Animal4 {
+    constructor (type, liveIn, isDomestic, legs, canFly) {
+        super (type, liveIn, isDomestic, legs);
+        this.canFly = canFly;
+    }
+}
+
+const myBird = new Bird ('Dove', 'Branch of tree', false, 2, true);
+
+// console.log (myBird);
+// console.log (myBird.animalLiveIn ());
+
+/** ===================== Problem 5 and 6 are like Problem 4 ===================== */
+
+/** Problem 7 from Page # 366: Explain DRY principal with example */
+
+/** 
+ * Answer:
+ * 
+        * 🔹 What is the DRY Principle?
+
+        DRY = Don’t Repeat Yourself
+
+        It’s a software development principle that says:
+        👉 Avoid duplicating code.
+        👉 Instead, keep logic in a single place so it’s easier to reuse, maintain, and update.
+
+        If you copy-paste the same logic multiple times, you’ll have to update it everywhere when requirements change → that’s error-prone.
+        With DRY, you update in one place only.
+
+        🔹 Bad Example (Not DRY)
+
+        Here’s some repetitive code:
+
+        // Calculate area of a rectangle
+        let length1 = 10;
+        let width1 = 5;
+        console.log("Area of rectangle 1:", length1 * width1);
+
+        let length2 = 8;
+        let width2 = 6;
+        console.log("Area of rectangle 2:", length2 * width2);
+
+        let length3 = 15;
+        let width3 = 4;
+        console.log("Area of rectangle 3:", length3 * width3);
+
+
+        ❌ Problem:
+
+        The same formula (length * width) is repeated three times.
+
+        If formula changes, you must edit it in many places.
+
+        🔹 Good Example (Using DRY)
+
+        Now we write the formula once inside a function:
+
+        function calculateRectangleArea(length, width) {
+        return length * width;
+        }
+
+        console.log("Area of rectangle 1:", calculateRectangleArea(10, 5));
+        console.log("Area of rectangle 2:", calculateRectangleArea(8, 6));
+        console.log("Area of rectangle 3:", calculateRectangleArea(15, 4));
+
+
+        ✅ Benefits:
+
+        Formula is defined once.
+
+        Reusable for unlimited rectangles.
+
+        If formula changes → update only inside the function.
+ */
