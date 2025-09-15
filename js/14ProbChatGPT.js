@@ -123,6 +123,44 @@ const bookings = [
   },
 ];
 
+/** Total Revenue:  */
 const revenues = bookings.map ((obj) => obj.nights * obj.pricePerNight);
 const totalRevenue = revenues.reduce ((revenue, totalRevenue) => (revenue + totalRevenue), 0);
 console.log (totalRevenue);
+
+/** Booking On:  */
+
+const bookingsPerDays = bookings.map (obj => obj.bookedOn);
+// console.log (bookingsPerDays);
+
+const particularDayBooking = {};
+
+for (let day of bookingsPerDays){
+  particularDayBooking [day] = (particularDayBooking [day] || 0) + 1;
+}
+// console.log (particularDayBooking);
+
+
+/** mostPopularRoomType  */
+
+const rooms = bookings.map (obj => obj.roomType);
+// console.log (rooms);
+
+const roomsFrequency = {};
+
+for (let room of rooms) {
+  roomsFrequency [room] = (roomsFrequency [room] || 0) + 1;
+}
+// console.log (roomsFrequency);
+
+
+let maxPopularRoom = null;
+let maxRoomCount = 0;
+
+for (let key in roomsFrequency) {
+  if (maxPopularRoom[key] > maxRoomCount) {
+    maxRoomCount = roomsFrequency[key];
+    maxPopularRoom = key;
+  }
+}
+console.log(`Element ${maxPopularRoom} appears ${maxRoomCount} times`);
